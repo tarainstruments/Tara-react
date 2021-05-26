@@ -1,3 +1,5 @@
+//! MEANT TO ONLY DISPLAY POSTS FROM THE "products" CATEGORY
+
 import React from "react";
 import { connect, styled, decode } from "frontity";
 import Item from "./list-item";
@@ -6,25 +8,17 @@ import Pagination from "./pagination";
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
-  let title = 'Blog';
-  if ( data.isAwsmJobOpeningsArchive ) {
-    title = 'Career';
+  let title = "Products";
+  if (data.isAwsmJobOpeningsArchive) {
+    title = "Career";
   }
 
   return (
     <Container>
       {/* If the list is a blog posts, we render a title. */}
-      {data.isPostArchive && (
-        <Header>
-          {title}
-        </Header>
-      )}
-        {/* If the list is a AWSM Job career page, we render a title. */}
-      {data.isAwsmJobOpeningsArchive && (
-        <Header>
-          {title}
-        </Header>
-      )}
+      {data.isPostArchive && <Header>{title}</Header>}
+      {/* If the list is a AWSM Job career page, we render a title. */}
+      {data.isAwsmJobOpeningsArchive && <Header>{title}</Header>}
       {/* If the list is a taxonomy, we render a title. */}
       {data.isTaxonomy && (
         <Header>
@@ -39,12 +33,12 @@ const List = ({ state }) => {
           Author: <b>{decode(state.source.author[data.id].name)}</b>
         </Header>
       )}
-    
+
       {/* Iterate over the items of the list. */}
       {data.isAwsmJobOpeningsArchive && (
-          <section className="section job-listing">
-            <div className="container">
-              <div className="row">
+        <section className="section job-listing">
+          <div className="container">
+            <div className="row">
               {/* Iterate over the items of the list. */}
               {data.items.map(({ type, id }) => {
                 const item = state.source[type][id];
@@ -52,19 +46,19 @@ const List = ({ state }) => {
                 return <Item key={item.id} item={item} />;
               })}
             </div>
-            </div>
-          </section>
+          </div>
+        </section>
       )}
       {!data.isAwsmJobOpeningsArchive && (
-          <>
+        <>
           {data.items.map(({ type, id }) => {
-              const item = state.source[type][id];
-              // Render one Item component for each one.
-              return <Item key={item.id} item={item} />;
-            })}
-          </>
+            const item = state.source[type][id];
+            // Render one Item component for each one.
+            return <Item key={item.id} item={item} />;
+          })}
+        </>
       )}
-      
+
       <Pagination />
     </Container>
   );
@@ -81,7 +75,6 @@ const Container = styled.section`
 `;
 
 const Header = styled.h1`
-  text-align:center;
-  margin-bottom:3rem;
-
+  text-align: center;
+  margin-bottom: 3rem;
 `;
