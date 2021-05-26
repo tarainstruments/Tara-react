@@ -35,13 +35,13 @@ export default connect(FeaturedMedia);
 
 const FeaturedContainer = styled.div`
   margin-top: 2rem;
-  margin-bottom:2rem;  
+  margin-bottom: 2rem;
 `;
 
 const StyledImage = styled(Image)`
   display: block;
   height: 100%;
-  max-height:400px;
+  max-height: 400px;
   width: 100%;
-  object-fit:cover;
+  object-fit: cover;
 `;
