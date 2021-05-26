@@ -39,9 +39,9 @@ const FeaturedContainer = styled.div`
 `;
 
 const StyledImage = styled(Image)`
-  display: block;
+  //   display: block;
   height: 100%;
-  max-height: 400px;
+  max-height: 200px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 `;

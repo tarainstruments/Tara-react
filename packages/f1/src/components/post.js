@@ -34,7 +34,7 @@ const Post = ({ state, actions, libraries }) => {
         <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
 
         {/* Only display author and date on posts */}
-        {data.isPost && (
+        {/* {data.isPost && (
           <div>
             {author && (
               <StyledLink link={author.link}>
@@ -48,7 +48,7 @@ const Post = ({ state, actions, libraries }) => {
               on <b>{date.toDateString()}</b>
             </DateWrapper>
           </div>
-        )}
+        )} */}
       </div>
 
       {/* Look at the settings to see if we should include the featured image */}

@@ -28,9 +28,8 @@ const Item = ({ state, item }) => {
     <>
       {!isJobs && item.categories.includes(3) && (
         <Article
-          className="job-article col-12 col-md-6"
+          className="job-article col-12 col-md-6 align-items-center"
           style={{
-            maxHeight: "110%",
             maxWidth: "33%",
             display: "inline-flex",
           }}
@@ -40,10 +39,9 @@ const Item = ({ state, item }) => {
               <h4 dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
             </Link>
             {/* Display the featured image of the product here*/}
-            {state.theme.featured.showOnList && (
-              // <Image id={item.featured_media} />
+            {(state.theme.featured.showOnList && (
               <FeaturedMedia id={item.featured_media} />
-            )}
+            )) || <Image id={item.featured_media} />}
 
             {/* If the post has an excerpt (short summary text), we render it */}
             {item.excerpt && (

@@ -22,6 +22,10 @@ const settings = {
             ["News", "/news/"],
             ["Jobs", "/jobs"],
           ],
+          socialLinks: [
+            ["Facebook", "https://facebook.com/tarainstruments"],
+            ["Twitter", "https://twitter.com/tarainstruments"],
+          ],
           featured: {
             showOnList: true,
             showOnPost: true,
