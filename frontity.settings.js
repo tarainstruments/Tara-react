@@ -35,16 +35,18 @@ const settings = {
       name: "@frontity/wp-source",
       state: {
         source: {
-          api: "https://tarainstruments.com/wp-json",
           url: "https://tarainstruments.com",
           homepage: "/home",
           postsPage: "/products",
+          params: {
+            per_page: 50,
+          },
         },
       },
     },
     "@frontity/tiny-router",
     "@frontity/html2react",
-    "frontity-contact-form-7",
+    "@aamodtgroup/frontity-contact-form-7",
     "@awsmin/frontity-wp-job-openings",
   ],
 };
