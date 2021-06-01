@@ -20,137 +20,137 @@ import gutenbergTheme from "./styles/gutenberg/theme.css";
  * in roots.
  */
 const Theme = ({ state }) => {
-    // Get information about the current URL.
-    const data = state.source.get(state.router.link);
+  // Get information about the current URL.
+  const data = state.source.get(state.router.link);
 
-    return (
-        <>
-            {/* Add some metatags to the <head> of the HTML. */}
-            <Title />
-            <Head>
-                <meta name="description" content={state.frontity.description} />
-                <html lang="en" />
-            </Head>
+  return (
+    <>
+      {/* Add some metatags to the <head> of the HTML. */}
+      <Title />
+      <Head>
+        <meta name="description" content={state.frontity.description} />
+        <html lang="en" />
+      </Head>
 
-            {/* Add some global styles for the whole site, like body or a's. 
+      {/* Add some global styles for the whole site, like body or a's. 
       Not classes here because we use CSS-in-JS. Only global HTML tags. */}
-            <Global styles={css(BootstrapCss)} />
-            <Global styles={css(gutenbergStyle)} />
-            <Global styles={css(gutenbergTheme)} />
-            <Global styles={globalStyles} />
+      <Global styles={css(BootstrapCss)} />
+      <Global styles={css(gutenbergStyle)} />
+      <Global styles={css(gutenbergTheme)} />
+      <Global styles={globalStyles} />
 
-            {/* <h1 align="center">Some header example</h1> */}
-            {/* Add the header of the site. */}
-            <HeadContainer>
-                <Header />
-            </HeadContainer>
+      {/* <h1 align="center">Some header example</h1> */}
+      {/* Add the header of the site. */}
+      <HeadContainer>
+        <Header />
+      </HeadContainer>
 
-            {/* Add the main section. It renders a different component depending
+      {/* Add the main section. It renders a different component depending
       on the type of URL we are in. */}
-            <Main>
-                <Switch>
-                    <Loading when={data.isFetching} />
-                    <List when={data.isArchive} />
-                    <HomePage when={data.isHome} />
-                    <Jobs when={data.isAwsmJobOpenings} />
-                    <Page when={data.isPage} />
-                    <Post when={data.isPostType} />
-                    <PageError when={data.isError} />
-                </Switch>
-            </Main>
-            <FooterContainer>
-                <Footer />
-            </FooterContainer>
-        </>
-    );
+      <Main>
+        <Switch>
+          <Loading when={data.isFetching} />
+          <List when={data.isArchive} />
+          <HomePage when={data.isHome} />
+          <Jobs when={data.isAwsmJobOpenings} />
+          <Page when={data.isPage} />
+          <Post when={data.isPostType} />
+          <PageError when={data.isError} />
+        </Switch>
+      </Main>
+      <FooterContainer>
+        <Footer />
+      </FooterContainer>
+    </>
+  );
 };
 
 export default connect(Theme);
 
 const globalStyles = css`
-    :root {
-        --brand: #5b3be8;
-        --black: #000000;
-        --white: #ffffff;
-        --bodycolor: #343434;
+  :root {
+    --brand: #5b3be8;
+    --black: #000000;
+    --white: #ffffff;
+    --bodycolor: #343434;
+  }
+  body {
+    margin: 0;
+    color: var(--bodycolor);
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-feature-settings: "kern";
+    -webkit-font-smoothing: antialiased;
+    min-height: -webkit-fill-available;
+  }
+  html {
+    height: -webkit-fill-available;
+    background: url("https://tarainstruments.com/wp-content/uploads/2021/05/home_background.jpg")
+      no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  ,
+  a,
+  a:visited {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
     }
-    body {
-        margin: 0;
-        color: var(--bodycolor);
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-            Roboto, "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-feature-settings: "kern";
-        -webkit-font-smoothing: antialiased;
-        min-height: -webkit-fill-available;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--black);
+  }
+  p {
+    line-height: 24px;
+    font-size: 18px;
+  }
+  // #root {
+  //   display:flex;
+  //   flex-direction: column;
+  //   height: auto;
+  // }
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .section {
+    padding: 34px 0;
+    @media (min-width: 992px) {
+      padding: 50px 0;
     }
-    html {
-        height: -webkit-fill-available;
-        background: url("https://tarainstruments.com/wp-content/uploads/2021/05/home_background.jpg")
-            no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
-    ,
-    a,
-    a:visited {
-        text-decoration: none;
-        &:hover {
-            text-decoration: none;
-        }
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: var(--black);
-    }
-    p {
-        line-height: 24px;
-        font-size: 18px;
-    }
-    // #root {
-    //   display:flex;
-    //   flex-direction: column;
-    //   height: auto;
-    // }
-    .container {
-        max-width: 1200px;
-        width: 100%;
-        margin: 0 auto;
-        position: relative;
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-    .section {
-        padding: 34px 0;
-        @media (min-width: 992px) {
-            padding: 50px 0;
-        }
-    }
+  }
 `;
 
 const HeadContainer = styled.div`
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding-top: 2.75rem;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-bottom: 6.25rem;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 2.75rem;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 6.25rem;
 `;
 const FooterContainer = styled.div`
-    width: 100%;
-    background: var(--brand);
-    // margin-top: auto;
+  width: 100%;
+  background: var(--brand);
+  // margin-top: auto;
 `;
 
 const Main = styled.div`
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 `;
