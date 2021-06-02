@@ -56,13 +56,13 @@ const Item = ({ state, item, isPrinciples }) => {
       {/* For principles */}
       {isPrinciples && (
         <Article
-          className="job-article col-12 col-md-6 col-lg-4 align-self-strech"
+          className="card job-article col-12 col-md-6 col-lg-4 align-self-strech"
           style={{
-            maxWidth: "33%",
+            // maxWidth: "33%",
             display: "inline-flex",
           }}
         >
-          <div className="job-box">
+          <div className="job-box card-body">
             <Link className="job-title" link={newLink}>
               <h4
                 dangerouslySetInnerHTML={{
@@ -179,13 +179,7 @@ const Item = ({ state, item, isPrinciples }) => {
       )}
       {/* for products */}
       {!isPrinciples && !isJobs && (
-        <Article
-          className="job-article col-12 col-md-6 align-items-center"
-          style={{
-            maxWidth: "33%",
-            display: "inline-flex",
-          }}
-        >
+        <Article className="card job-article align-items-center">
           <div className="job-box">
             <Link className="job-title" link={item.link}>
               <h4
@@ -277,6 +271,7 @@ const Article = styled.article`
     margin: 0;
     margin-bottom: 2rem;
     display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     flex-direction: column;
     .job-box {
       padding: 2rem;

@@ -81,7 +81,7 @@ const List = ({ state }) => {
         </section>
       )}
       {!data.isAwsmJobOpeningsArchive && (
-        <>
+        <CardGrid>
           {data.items.map(({ type, id }) => {
             const item = state.source[type][id];
             // if (typeof item !== "undefined") {
@@ -95,7 +95,7 @@ const List = ({ state }) => {
             );
             // else return null;
           })}
-        </>
+        </CardGrid>
       )}
 
       <Pagination />
@@ -111,6 +111,15 @@ const Container = styled.section`
   padding-right: 15px;
   padding-left: 15px;
   list-style: none;
+`;
+
+const CardGrid = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-columns: minmax(300px, 1fr);
+  grid-row-gap: 0.5em;
+  grid-column-gap: 1em;
 `;
 
 const Header = styled.h1`
