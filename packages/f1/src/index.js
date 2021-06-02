@@ -2,7 +2,6 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 import links from "./processor/links";
-import postsHandler from "./components/handlers/postsHandler";
 
 const awsminF1 = {
   name: "@awsmin/f1",
@@ -40,13 +39,13 @@ const awsminF1 = {
         state.theme.isMobileMenuOpen = false;
       },
     },
-    beforeSSR: async ({ state, actions }) => {
-      await Promise.all(
-        Object.keys(categoriesWidgetsHome).map((category) =>
-          actions.source.fetch(`/category/${category}/`)
-        )
-      );
-    },
+    // beforeSSR: async ({ state, actions }) => {
+    //   await Promise.all(
+    //     Object.keys(categoriesWidgetsHome).map((category) =>
+    //       actions.source.fetch(`/category/${category}/`)
+    //     )
+    //   );
+    // },
   },
   libraries: {
     html2react: {
@@ -55,9 +54,6 @@ const awsminF1 = {
        * inside the content HTML. You can add your own processors too
        */
       processors: [image, iframe, links],
-    },
-    source: {
-      handlers: [postsHandler],
     },
   },
 };
