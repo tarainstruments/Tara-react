@@ -6,7 +6,6 @@ import Link from "@frontity/components/link";
 import FeaturedMedia from "../featured-media";
 import Image from "@frontity/components/image";
 import Switch from "@frontity/components/switch";
-import { getPostsGroupedByCategory } from "../../helpers";
 
 function truncateString(str, num) {
   if (str.length <= num) {
@@ -37,20 +36,15 @@ const Item = ({ state, item, isPrinciples }) => {
   const isJobs = data.isAwsmJobOpeningsArchive;
   let newLink = null;
 
-  const postsPerCategory = getPostsGroupedByCategory(state.source);
-
-  console.log("INSIDE LIST-ITEM, isPrinciples? " + isPrinciples);
-
   let readMoreLabel = "Read more";
   if (isJobs) {
     readMoreLabel = "More Details";
   }
 
-  console.log("Old link = " + item.link + ", of type = " + typeof item.link);
-
   if (isPrinciples) {
     newLink = item.link.split("/").filter((item) => item);
     newLink[0] = "category";
+    newLink[1] = truncateString(newLink[1]);
     newLink = newLink.join("/");
     newLink = "/" + newLink;
     // item.link = newLink;
@@ -59,6 +53,7 @@ const Item = ({ state, item, isPrinciples }) => {
 
   return (
     <Switch>
+      {/* For principles */}
       {isPrinciples && (
         <Article
           className="job-article col-12 col-md-6 col-lg-4 align-self-strech"
@@ -82,15 +77,13 @@ const Item = ({ state, item, isPrinciples }) => {
             )) || <Image id={item.featured_media} />}
 
             {/* If the post has an excerpt (short summary text), we render it */}
-            {
-              //   item.excerpt && (
+            {item.excerpt && (
               <Excerpt
                 dangerouslySetInnerHTML={{
-                  __html: "HELLO EXCERPT", //item.excerpt.rendered,
+                  __html: item.excerpt.rendered,
                 }}
               />
-              //   )
-            }
+            )}
             <Link className="brand-btnhollow" link={newLink}>
               {readMoreLabel}{" "}
               <svg
@@ -209,9 +202,7 @@ const Item = ({ state, item, isPrinciples }) => {
             {/* If the post has an excerpt (short summary text), we render it */}
             {item.excerpt && (
               <Excerpt
-                dangerouslySetInnerHTML={{
-                  __html: item.excerpt.rendered + "IS A PRODUCT",
-                }}
+                dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
               />
             )}
 

@@ -3,6 +3,10 @@ import { connect, styled, decode } from "frontity";
 import Item from "./list-item";
 import Pagination from "./pagination";
 
+function capitaliseFirst(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
@@ -15,22 +19,19 @@ const List = ({ state }) => {
     title = "Principles";
   }
 
-  console.log("INSIDE LIST, isPrinciple? " + isPrinciple);
-
   return (
     <Container>
-      {/* If the list is a blog posts, we render a title. */}
-      {data.isPostTypeArchive && <Header>{title}</Header>}
-      {/* If the list is a AWSM Job career page, we render a title. */}
-      {data.isAwsmJobOpeningsArchive && <Header>{title}</Header>}
+      {/* Render a title. */}
+      <Header>{title}</Header>
       {/* If the list is a taxonomy, we render a title. */}
       {data.isTaxonomy && (
-          <Header>
-            {data.taxonomy}:{" "}
-            <b>{decode(state.source[data.taxonomy][data.id].name)}</b>
-          </Header>
-        ) &&
-        console.log("is Taxonomy")}
+        <Header>
+          {data.isCategory && "Principle"}:{" "}
+          <b>
+            {capitaliseFirst(decode(state.source[data.taxonomy][data.id].name))}
+          </b>
+        </Header>
+      )}
 
       {/* If the list is for a specific author, we render a title. */}
       {data.isAuthor && (
@@ -83,14 +84,10 @@ const List = ({ state }) => {
         <>
           {data.items.map(({ type, id }) => {
             const item = state.source[type][id];
-            if (typeof item !== "undefined") {
-              console.log("Item WHICH IS undefined: ");
-              console.log(item);
-            }
-            if (typeof item.categories !== "undefined") {
-              console.log("Item for which undefined: ");
-              console.log(item);
-            }
+            // if (typeof item !== "undefined") {
+            //   console.log("Item WHICH IS undefined: ");
+            //   console.log(item);
+            // }
             // Render one Item component for each one.
             // if (item.categories.include(typeToShow))
             return (

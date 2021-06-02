@@ -3,8 +3,8 @@ const settings = {
   state: {
     frontity: {
       url: "https://tarainstruments.com",
-      title: "AWSM F1 - Frontity theme",
-      description: "A simple theme for Frontity WordPress development",
+      title: "Tara Instruments",
+      description: "The website for Tara Instruments.",
     },
   },
   packages: [
