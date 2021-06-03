@@ -85,12 +85,12 @@ const globalStyles = css`
   }
   html {
     height: -webkit-fill-available;
-    background: url("https://tarainstruments.com/wp-content/uploads/2021/05/home_background.jpg")
-      no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    .background_image {
+      background-image: "url('https://tarainstruments.com/wp-content/uploads/2021/05/home_background.jpg')";
+      background-size: "cover";
+      background-repeat: "no-repeat";
+      background-position: "top";
+    }
   }
   ,
   a,

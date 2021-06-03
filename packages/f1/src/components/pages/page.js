@@ -72,8 +72,13 @@ const Content = styled.div`
     margin: 0 auto;
   }
 
+  .social-link {
+    margin: 1.5rem 1rem;
+  }
+
   p {
     margin-bottom: 1.5rem;
+    text-align: justify;
   }
 
   h1,

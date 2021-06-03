@@ -14,7 +14,7 @@ const settings = {
         theme: {
           menu: [
             ["Home", "/"],
-            ["About", "/about/"],
+            ["About Us", "/about-us/"],
             ["Principles", "/principles/"],
             ["Products", "/products/"],
             ["Solutions", "/solutions/"],
