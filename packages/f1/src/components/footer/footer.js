@@ -20,7 +20,7 @@ const Footer = ({ state }) => {
               <b>Contact:</b>+91 98671 70006
               <br />
               <br />
-              <b>Email:</b> info@tarainstuments.com
+              <b>Email:</b> info@tarainstruments.com
             </p>
           </div>
           <div className="col-12 col-md-4 col-lg-2 footer-widget widget-two">

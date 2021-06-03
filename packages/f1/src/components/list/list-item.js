@@ -42,9 +42,10 @@ const Item = ({ state, item, isPrinciples }) => {
   }
 
   if (isPrinciples) {
+    console.log("Old: " + item.link);
     newLink = item.link.split("/").filter((item) => item);
     newLink[0] = "category";
-    newLink[1] = truncateString(newLink[1]);
+    // newLink[1] = truncateString(newLink[1]);
     newLink = newLink.join("/");
     newLink = "/" + newLink;
     // item.link = newLink;

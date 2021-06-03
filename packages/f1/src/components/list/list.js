@@ -2,10 +2,7 @@ import React from "react";
 import { connect, styled, decode } from "frontity";
 import Item from "./list-item";
 import Pagination from "./pagination";
-
-function capitaliseFirst(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
+import capitalise from "../helpers";
 
 const List = ({ state }) => {
   // Get the data of the current list.
@@ -27,9 +24,7 @@ const List = ({ state }) => {
       {data.isTaxonomy && (
         <Header>
           {data.isCategory && "Principle"}:{" "}
-          <b>
-            {capitaliseFirst(decode(state.source[data.taxonomy][data.id].name))}
-          </b>
+          <b>{capitalise(decode(state.source[data.taxonomy][data.id].name))}</b>
         </Header>
       )}
 

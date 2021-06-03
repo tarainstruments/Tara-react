@@ -21,19 +21,19 @@ const Pagination = ({ state, actions }) => {
 
   return (
     <div>
-      {/* If there's a next page, render this link */}
-      {next && (
-        <Link link={next}>
-          <Text>← Next page </Text>
+      {/* If there's a previous page, render this link */}
+      {previous && (
+        <Link link={previous}>
+          <Text>← Previous page</Text>
         </Link>
       )}
 
       {previous && next && " - "}
 
-      {/* If there's a previous page, render this link */}
-      {previous && (
-        <Link link={previous}>
-          <Text>Previous page →</Text>
+      {/* If there's a next page, render this link */}
+      {next && (
+        <Link link={next}>
+          <Text>Next page →</Text>
         </Link>
       )}
     </div>

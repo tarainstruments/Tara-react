@@ -1,5 +1,6 @@
 import React from "react";
 import { Head, connect, decode } from "frontity";
+import capitalise from "./helpers";
 
 const Title = ({ state }) => {
   // Get data about the current URL.
@@ -16,8 +17,8 @@ const Title = ({ state }) => {
       taxonomy.charAt(0).toUpperCase() + taxonomy.slice(1);
     const nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1);
     // 3. Render the proper title.
-    //   title = `${taxonomyCapitalized}: ${decode(nameCapitalized)} - ${state.frontity.title}`;
-    title = `${decode(nameCapitalized)} - ${state.frontity.title}`;
+    //   title = `${capitalise(taxonomy)}: ${decode(capitalise(name))} - ${state.frontity.title}`;
+    title = `${decode(capitalise(name))} - ${state.frontity.title}`;
   } else if (data.isAuthor) {
     // Add titles to authors, like "Author: Jon Snow - Blog Name".
     // 1. Get the author entity from the state to get its name.

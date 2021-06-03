@@ -93,8 +93,21 @@ const Content = styled.div`
     margin: 0 auto;
   }
 
+  h1,
+  h2,
+  h3,
+  h4 {
+    padding: 1rem 0;
+  }
+
   p {
     margin-bottom: 1.5rem;
+    text-align: justify;
+  }
+  li {
+    text-align: justify;
+    margin-bottom: 1rem;
+    font-size: 110%;
   }
 
   img {
