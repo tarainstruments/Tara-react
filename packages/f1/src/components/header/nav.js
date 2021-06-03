@@ -1,7 +1,16 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
+import { withBaseIcon } from "react-icons-kit";
+import { facebook, linkedin, youtube } from "react-icons-kit/fa/";
 
+const SideIconContainer = withBaseIcon({
+  //   style: { color: "var(--brand)" },
+});
+
+export const FacebookIcon = () => <SideIconContainer icon={facebook} />;
+export const LinkedinIcon = () => <SideIconContainer icon={linkedin} />;
+export const YoutubeIcon = () => <SideIconContainer icon={youtube} />;
 /**
  * Navigation Component
  *
@@ -17,6 +26,20 @@ const Nav = ({ state }) => (
           {/* If link url is the current page, add `aria-current` for a11y */}
           <Link link={link} aria-current={isCurrentPage ? "page" : undefined}>
             {name}
+          </Link>
+        </NavItem>
+      );
+    })}
+    {/* <FacebookIcon />
+    <LinkedinIcon />
+    <YoutubeIcon /> */}
+    {state.theme.socialLinks.map(([name, link]) => {
+      return (
+        <NavItem key={name}>
+          <Link link={link}>
+            {name.toLowerCase() === "facebook" && <FacebookIcon />}
+            {name.toLowerCase() === "linkedin" && <LinkedinIcon />}
+            {name.toLowerCase() === "youtube" && <YoutubeIcon />}
           </Link>
         </NavItem>
       );
@@ -51,14 +74,14 @@ const NavItem = styled.div`
   & > a {
     display: inline-block;
     line-height: 2em;
-    color:var(--black);
+    color: var(--black);
     transition: all 0.3s ease;
     /* Use for semantic approach to style the current link */
     &[aria-current="page"] {
-      color:var(--brand);
+      color: var(--brand);
     }
     &:hover {
-      color:var(--brand);
+      color: var(--brand);
     }
   }
 

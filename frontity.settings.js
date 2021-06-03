@@ -23,12 +23,16 @@ const settings = {
             ["Jobs", "/jobs/"],
           ],
           socialLinks: [
-            ["Facebook", "https://facebook.com/tarainstruments"],
-            ["Twitter", "https://twitter.com/tarainstruments"],
+            ["Facebook", "https://www.facebook.com/TaraInternational1980/"],
             [
               "LinkedIn",
-              "https://www.linkedin.com/company/tara-international/",
+              "https://www.linkedin.com/company/taragroupofbusiness/mycompany/",
             ],
+            [
+              "YouTube",
+              "https://www.youtube.com/channel/UCqTtnisCnTNwVOO_NfFxDqQ",
+            ],
+            ["Twitter", "https://twitter.com/tarainstruments"],
           ],
           featured: {
             showOnList: true,

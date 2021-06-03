@@ -74,6 +74,7 @@ const Content = styled.div`
 
   .social-link {
     margin: 1.5rem 1rem;
+    width: 5rem;
   }
 
   p {
