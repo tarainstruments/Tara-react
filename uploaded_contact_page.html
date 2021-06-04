@@ -1,0 +1,70 @@
+<div class="awsm-job-single-wrap">
+    <div class="awsm-job-content">
+        <div class="awsm-job-entry-content entry-content">
+            <!-- wp:heading {"level":3} -->
+            <h3>Reach Out to Us</h3>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph -->
+            <p>For any inquiries regarding our products, you can reach out to us via the provided contact form.
+            </p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:paragraph -->
+            <p>Alternatively, you can directly email us at
+                <a href="mailto:support@tarainstruments.com">support@tarainstruments.com</a>
+                or
+                <a href="mailto:info@tarainstruments.com">info@tarainstruments.com</a>
+            </p>
+            <!-- /wp:paragraph -->
+        </div>
+    </div>
+
+    <div class="awsm-job-form">
+
+        <div class="awsm-job-form-inner">
+
+            <h2>Contact Form</h2>
+
+            <form id="awsm-application-form" name="applicationform" method="post" enctype="multipart/form-data">
+
+                <div class="awsm-job-form-group">
+                    <label for="awsm-applicant-name">Full Name
+                        <span class="awsm-job-form-error">*</span></label><input type="text" name="awsm_applicant_name" class="awsm-job-form-field awsm-job-form-control" id="awsm-applicant-name" required="required" data-msg-required="This field is required." /></div>
+                <div class="awsm-job-form-group">
+                    <label for="awsm-applicant-email">Email
+                        <span class="awsm-job-form-error">*</span></label><input type="email" name="awsm_applicant_email" class="awsm-job-form-field awsm-job-form-control" id="awsm-applicant-email" required="required" data-msg-required="This field is required." data-rule-email="true" data-msg-email="Please enter a valid email address." /></div>
+                <div class="awsm-job-form-group">
+                    <label for="awsm-applicant-phone">Phone
+                        <span class="awsm-job-form-error">*</span></label><input type="tel" name="awsm_applicant_phone" class="awsm-job-form-field awsm-job-form-control" id="awsm-applicant-phone" required="required" data-msg-required="This field is required." /></div>
+                <div class="awsm-job-form-group">
+                    <label for="awsm-cover-letter">Inquiry
+                        <span class="awsm-job-form-error">*</span></label>
+                    <textarea name="awsm_applicant_letter" class="awsm-job-form-field awsm-job-form-control" id="awsm-cover-letter" required="required" data-msg-required="This field is required." rows="5" cols="50"></textarea>
+                </div>
+                <div class="awsm-job-form-group">
+                    <label for="awsm-application-file">Any supporting attachment(s)
+                        <span class="awsm-job-form-error">*</span></label><input type="file" name="awsm_file" class="awsm-job-form-field awsm-resume-file-control awsm-job-form-control awsm-form-file-control" id="awsm-application-file" required="required" data-msg-required="This field is required." accept=".pdf, .doc, .docx" />
+                </div>
+                <div class="awsm-job-form-group awsm-job-inline-group">
+                    <input name="awsm_form_privacy_policy" class="awsm-job-form-field" id="awsm_form_privacy_policy" required="" data-msg-required="This field is required." value="yes" aria-required="true" type="checkbox">
+                    <label for="awsm_form_privacy_policy">By using this form you agree with the storage and handling of your data by this website.
+                        <span class="awsm-job-form-error">*</span></label>
+                </div>
+
+                <input type="hidden" name="awsm_job_id" value="17">
+                <input type="hidden" name="action" value="awsm_applicant_form_submission">
+                <div class="awsm-job-form-group">
+                    <input type="submit" name="form_sub" id="awsm-application-submit-btn" value="Submit" data-response-text="Submitting.." />
+                </div>
+
+            </form>
+
+            <div class="awsm-application-message" style="display: none;"></div>
+
+        </div>
+        <!-- .awsm-job-form-inner -->
+    </div>
+    <!-- .awsm-job-form -->
+
+</div>

@@ -14,13 +14,13 @@ const settings = {
         theme: {
           menu: [
             ["Home", "/"],
-            ["About Us", "/about-us/"],
+            ["About", "/about/"],
             ["Principles", "/principles/"],
             ["Products", "/products/"],
-            ["Solutions", "/solutions/"],
-            ["Support", "/services/"],
+            // ["Solutions", "/solutions/"],
             ["News", "/news/"],
             ["Jobs", "/jobs/"],
+            ["Contact", "/contact/"],
           ],
           socialLinks: [
             ["Facebook", "https://www.facebook.com/TaraInternational1980/"],

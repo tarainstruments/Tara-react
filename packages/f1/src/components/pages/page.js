@@ -40,7 +40,9 @@ const Page = ({ state, actions, libraries }) => {
       {/* Render the content using the Html2React component so the HTML is processed
        by the processors we included in the libraries.html2react.processors array. */}
       <Content>
+        {/* <JobContent> */}
         <Html2React html={page.content.rendered} />
+        {/* </JobContent> */}
       </Content>
     </ArticleContainer>
   ) : null;
@@ -70,16 +72,6 @@ const Content = styled.div`
     max-width: 1035px;
     width: 100%;
     margin: 0 auto;
-  }
-
-  .social-link {
-    margin: 1.5rem 1rem;
-    width: 5rem;
-  }
-
-  p {
-    margin-bottom: 1.5rem;
-    text-align: justify;
   }
 
   h1,
@@ -291,6 +283,15 @@ const Content = styled.div`
     padding-bottom: 2rem;
     .wp-block-group__inner-container {
       max-width: 571px;
+      p {
+        margin-bottom: 1.5rem;
+        text-align: justify;
+      }
+      li {
+        text-align: justify;
+        margin-bottom: 1rem;
+        font-size: 110%;
+      }
     }
   }
   .about-services {
@@ -315,6 +316,7 @@ const Content = styled.div`
         }
         p {
           position: relative;
+          text-align: center;
         }
       }
     }
