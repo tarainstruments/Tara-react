@@ -8,12 +8,16 @@ const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
   const isPrinciple = data.type === "principles";
+  const isNews = data.type === "news";
   let title = "Products";
   if (data.isAwsmJobOpeningsArchive) {
     title = "Jobs";
   }
   if (isPrinciple) {
     title = "Principles";
+  }
+  if (isNews) {
+    title = "News";
   }
 
   return (

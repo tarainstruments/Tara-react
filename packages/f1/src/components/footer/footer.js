@@ -13,8 +13,13 @@ const Footer = ({ state }) => {
           <div className="col-12 col-lg-6 footer-widget widget-one">
             <h4 className="widget-title">Office Address</h4>
             <p>
-              Regd. Corp. Off.: Notus. No. 312, 3rd Floor, Bhailal Amin Marg.
-              Near Genda Circle, Vadodara – 390007, Gujarat – India.
+              Notus. No. 312, Bhailal Amin Marg.
+              <br />
+              Near Genda Circle,
+              <br />
+              Vadodara – 390007,
+              <br />
+              Gujarat, India.
               <br />
               <br />
               <b>Contact:</b>+91 98671 70006

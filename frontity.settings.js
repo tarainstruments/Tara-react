@@ -61,6 +61,11 @@ const settings = {
               endpoint: "principles", // REST API endpoint
               archive: "/principles", // link where this custom posts are listed
             },
+            {
+              type: "news", // type slug
+              endpoint: "news", // REST API endpoint
+              archive: "/news", // link where this custom posts are listed
+            },
           ],
         },
       },
