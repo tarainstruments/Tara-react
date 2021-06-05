@@ -267,6 +267,8 @@ const Content = styled.div`
             padding-left: 2rem;
           }
           .wpcf7 {
+            padding-top: 15px;
+            padding-bottom: 15px;
             .wpcf7-form {
               label {
                 display: block;
@@ -286,6 +288,8 @@ const Content = styled.div`
       p {
         margin-bottom: 1.5rem;
         text-align: justify;
+        padding-right: 15px;
+        padding-left: 15px;
       }
       li {
         text-align: justify;
@@ -296,8 +300,9 @@ const Content = styled.div`
   }
   .about-services {
     background: #f8f8fa;
-    padding-top: 34px;
-    padding-bottom: 34px;
+    // padding-top: 34px;
+    // padding-bottom: 34px;
+    padding: 1.5rem;
     max-width: 100%;
     @media (min-width: 992px) {
       padding-top: 75px;
@@ -309,6 +314,10 @@ const Content = styled.div`
           width: 62px !important;
           height: 62px;
           margin: 0 auto;
+        }
+        .wp-block-column {
+          padding-top: 15px;
+          padding-bottom: 15px;
         }
         h5 {
           margin-bottom: 1rem;

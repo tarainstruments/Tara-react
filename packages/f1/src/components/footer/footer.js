@@ -22,7 +22,7 @@ const Footer = ({ state }) => {
               Gujarat, India.
               <br />
               <br />
-              <b>Contact:</b>+91 98671 70006
+              <b>Contact:</b> +91 98671 70006
               <br />
               <br />
               <b>Email:</b> info@tarainstruments.com
