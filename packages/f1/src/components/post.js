@@ -126,17 +126,25 @@ const Content = styled.div`
     }
   }
 
-  tbody > tr > :nth-child(1) {
-    width: 25%;
+  table {
+    table-layout: auto;
   }
 
-  thead > tr > :nth-child(1) {
-    width: 25%;
-  }
+  //   tbody > tr > :nth-child(1) {
+  //     width: 35%;
+  //   }
 
-  .tablepress .column-1 {
-    width: 25%;
-  }
+  //   thead > tr > :nth-child(1) {
+  //     width: 35%;
+  //   }
+
+  //   tbody > tr > :nth-child(3) {
+  //     width: 37.5%;
+  //   }
+
+  //   thead > tr > :nth-child(3) {
+  //     width: 37.5%;
+  //   }
 
   iframe {
     display: block;

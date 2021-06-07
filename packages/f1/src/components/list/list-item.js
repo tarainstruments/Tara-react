@@ -372,4 +372,5 @@ const PublishDate = styled.span`
 
 const Excerpt = styled.div`
   line-height: 1.6em;
+  text-align: justify;
 `;
