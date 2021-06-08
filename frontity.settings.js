@@ -51,10 +51,9 @@ const settings = {
           homepage: "/home",
           postsPage: "/products",
           params: {
-            per_page: 50,
+            per_page: 100,
           },
           categoryBase: "category",
-          //   postEndpoint: "products",
           postTypes: [
             {
               type: "principles", // type slug

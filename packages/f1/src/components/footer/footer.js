@@ -13,7 +13,7 @@ const Footer = ({ state }) => {
           <div className="col-12 col-lg-6 footer-widget widget-one">
             <h4 className="widget-title">Office Address</h4>
             <p>
-              Notus. No. 312, Bhailal Amin Marg.
+              No. 312, Notus IT Park, Bhailal Amin Marg.
               <br />
               Near Genda Circle,
               <br />
@@ -22,7 +22,7 @@ const Footer = ({ state }) => {
               Gujarat, India.
               <br />
               <br />
-              <b>Contact:</b> +91 98671 70006
+              <b>Contact:</b> ‎+91 74860 47646
               <br />
               <br />
               <b>Email:</b> info@tarainstruments.com
