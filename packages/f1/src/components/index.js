@@ -28,6 +28,10 @@ const Theme = ({ state }) => {
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
       <Head>
+        <meta
+          name="google-site-verification"
+          content="JkFoA-xTcJUpFArkVm3wVUdb0yV1pMJW87xO3t4jCps"
+        />
         <meta name="description" content={state.frontity.description} />
         <html lang="en" />
       </Head>
