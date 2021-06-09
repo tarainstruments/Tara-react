@@ -7,14 +7,14 @@ import capitalise from "../helpers";
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
-  const isPrinciple = data.type === "principals";
+  const isPrincipal = data.type === "principals";
   const isNews = data.type === "news";
   let title = "Products";
   if (data.isAwsmJobOpeningsArchive) {
     title = "Jobs";
   }
-  if (isPrinciple) {
-    title = "Principles";
+  if (isPrincipal) {
+    title = "Principals";
   }
   if (isNews) {
     title = "News";
@@ -27,7 +27,7 @@ const List = ({ state }) => {
       {/* If the list is a taxonomy, we render a title. */}
       {data.isTaxonomy && (
         <Header>
-          {data.isCategory && "Principle"}:{" "}
+          {data.isCategory && "Principal"}:{" "}
           <b>{capitalise(decode(state.source[data.taxonomy][data.id].name))}</b>
         </Header>
       )}
@@ -90,7 +90,7 @@ const List = ({ state }) => {
             // Render one Item component for each one.
             // if (item.categories.include(typeToShow))
             return (
-              <Item key={item.id} item={item} isPrinciples={isPrinciple} />
+              <Item key={item.id} item={item} isPrincipals={isPrincipal} />
             );
             // else return null;
           })}

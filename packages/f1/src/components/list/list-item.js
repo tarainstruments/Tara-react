@@ -28,7 +28,7 @@ function truncateString(str, num) {
  * - Author: name of author and published date
  * - FeaturedMedia: the featured image/video of the post
  */
-const Item = ({ state, item, isPrinciples }) => {
+const Item = ({ state, item, isPrincipals }) => {
   const data = state.source.get(state.router.link);
   const author = state.source.author[item.author];
   const date = new Date(item.date);
@@ -41,7 +41,7 @@ const Item = ({ state, item, isPrinciples }) => {
     readMoreLabel = "More Details";
   }
 
-  if (isPrinciples) {
+  if (isPrincipals) {
     console.log("Old: " + item.link);
     newLink = item.link.split("/").filter((item) => item);
     newLink[0] = "category";
@@ -55,7 +55,7 @@ const Item = ({ state, item, isPrinciples }) => {
   return (
     <Switch>
       {/* For principals */}
-      {isPrinciples && (
+      {isPrincipals && (
         <Article
           className="card job-article col-12 col-md-6 col-lg-4 align-self-strech"
           style={{
@@ -179,7 +179,7 @@ const Item = ({ state, item, isPrinciples }) => {
         </Article>
       )}
       {/* for products */}
-      {!isPrinciples && !isJobs && (
+      {!isPrincipals && !isJobs && (
         <Article className="card job-article align-items-center">
           <div className="job-box">
             <Link className="job-title" link={item.link}>
