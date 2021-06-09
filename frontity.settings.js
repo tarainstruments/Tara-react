@@ -15,7 +15,7 @@ const settings = {
           menu: [
             ["Home", "/"],
             ["About", "/about/"],
-            ["Principles", "/principles/"],
+            ["Principals", "/principals/"],
             ["Products", "/products/"],
             // ["Solutions", "/solutions/"],
             ["News", "/news/"],
@@ -56,9 +56,9 @@ const settings = {
           categoryBase: "category",
           postTypes: [
             {
-              type: "principles", // type slug
-              endpoint: "principles", // REST API endpoint
-              archive: "/principles", // link where this custom posts are listed
+              type: "principals", // type slug
+              endpoint: "principals", // REST API endpoint
+              archive: "/principals", // link where this custom posts are listed
             },
             {
               type: "news", // type slug

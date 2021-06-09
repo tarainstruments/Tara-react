@@ -7,7 +7,7 @@ import capitalise from "../helpers";
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
-  const isPrinciple = data.type === "principles";
+  const isPrinciple = data.type === "principals";
   const isNews = data.type === "news";
   let title = "Products";
   if (data.isAwsmJobOpeningsArchive) {

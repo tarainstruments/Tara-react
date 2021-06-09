@@ -54,7 +54,7 @@ const Item = ({ state, item, isPrinciples }) => {
 
   return (
     <Switch>
-      {/* For principles */}
+      {/* For principals */}
       {isPrinciples && (
         <Article
           className="card job-article col-12 col-md-6 col-lg-4 align-self-strech"
