@@ -57,9 +57,13 @@ const StyledImageList = styled(Image)`
 `;
 
 const StyledImage = styled(Image)`
-  //   display: block;
-  height: 100%;
+  display: block;
+  height: auto;
+  width: auto;
   max-height: 30rem;
-  width: 100%;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
   object-fit: contain;
+  object-position: center;
 `;
