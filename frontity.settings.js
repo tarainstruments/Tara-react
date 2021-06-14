@@ -4,7 +4,8 @@ const settings = {
     frontity: {
       url: "https://tarainstruments.com",
       title: "Tara Instruments",
-      description: "The website for Tara Instruments.",
+      description:
+        "Tara Instruments is an Instruments Provider for industry-standard scientific apparatus, for numerous applications.",
     },
   },
   packages: [
