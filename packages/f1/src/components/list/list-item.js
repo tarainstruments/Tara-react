@@ -74,7 +74,7 @@ const Item = ({ state, item, isPrincipals }) => {
 
             {/* Display the featured image of the product here*/}
             {(state.theme.featured.showOnList && (
-              <FeaturedMedia id={item.featured_media} />
+              <FeaturedMedia id={item.featured_media} inList={true} />
             )) || <Image id={item.featured_media} />}
 
             {/* If the post has an excerpt (short summary text), we render it */}
@@ -191,7 +191,7 @@ const Item = ({ state, item, isPrincipals }) => {
             </Link>
             {/* Display the featured image of the product here*/}
             {(state.theme.featured.showOnList && (
-              <FeaturedMedia id={item.featured_media} />
+              <FeaturedMedia id={item.featured_media} inList={true} />
             )) || <Image id={item.featured_media} />}
 
             {/* If the post has an excerpt (short summary text), we render it */}

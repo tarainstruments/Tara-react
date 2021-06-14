@@ -2,7 +2,7 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Image from "@frontity/components/image";
 
-const FeaturedMedia = ({ state, id }) => {
+const FeaturedMedia = ({ state, id, inList }) => {
   const media = state.source.attachment[id];
 
   if (!media) return null;
@@ -21,13 +21,23 @@ const FeaturedMedia = ({ state, id }) => {
       ) || null;
 
   return (
-    <FeaturedContainer>
-      <StyledImage
-        alt={media.title.rendered}
-        src={media.source_url}
-        srcSet={srcset}
-      />
-    </FeaturedContainer>
+    (inList && (
+      <FeaturedContainer>
+        <StyledImageList
+          alt={media.title.rendered}
+          src={media.source_url}
+          srcSet={srcset}
+        />
+      </FeaturedContainer>
+    )) || (
+      <FeaturedContainer>
+        <StyledImage
+          alt={media.title.rendered}
+          src={media.source_url}
+          srcSet={srcset}
+        />
+      </FeaturedContainer>
+    )
   );
 };
 
@@ -36,6 +46,14 @@ export default connect(FeaturedMedia);
 const FeaturedContainer = styled.div`
   margin-top: 2rem;
   margin-bottom: 2rem;
+`;
+
+const StyledImageList = styled(Image)`
+  //   display: block;
+  height: 100%;
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
 `;
 
 const StyledImage = styled(Image)`
