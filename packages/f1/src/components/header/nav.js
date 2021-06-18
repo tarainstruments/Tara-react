@@ -33,7 +33,7 @@ const Nav = ({ state }) => (
     {/* <FacebookIcon />
     <LinkedinIcon />
     <YoutubeIcon /> */}
-    {state.theme.socialLinks.map(([name, link]) => {
+    {/* {state.theme.socialLinks.map(([name, link]) => {
       return (
         <NavItem key={name}>
           <Link link={link}>
@@ -43,7 +43,7 @@ const Nav = ({ state }) => (
           </Link>
         </NavItem>
       );
-    })}
+    })} */}
   </NavContainer>
 );
 
