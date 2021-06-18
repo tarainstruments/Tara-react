@@ -9,9 +9,10 @@ const Header = ({ state }) => {
     <>
       <BrandContainer>
         <StyledLink link="/">
-          <Title>
+          <HeaderLogo src="https://tarainstruments.com/wp-content/uploads/2021/06/tara_logo-1.png"></HeaderLogo>
+          {/* <Title>
             <span>Tara</span> Instruments
-          </Title>
+          </Title> */}
         </StyledLink>
         <MobileMenu />
       </BrandContainer>
@@ -33,8 +34,15 @@ const BrandContainer = styled.div`
   }
 `;
 
+const HeaderLogo = styled.img`
+  max-height: 60px;
+  margin-top: auto;
+  margin-bottom: auto;
+`;
+
 const Title = styled.div`
-  margin: 0;
+  //   float: right;
+  //   margin-left: 2rem;
   font-size: 20px;
   span {
     font-weight: 800;

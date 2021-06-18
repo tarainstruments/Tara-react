@@ -24,7 +24,7 @@ const Theme = ({ state }) => {
   const data = state.source.get(state.router.link);
 
   return (
-    <div className="background_image">
+    <>
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
       <Head>
@@ -86,7 +86,7 @@ const Theme = ({ state }) => {
       <FooterContainer>
         <Footer />
       </FooterContainer>
-    </div>
+    </>
   );
 };
 
@@ -137,11 +137,9 @@ const globalStyles = css`
     line-height: 24px;
     font-size: 18px;
   }
-  // #root {
-  //   display:flex;
-  //   flex-direction: column;
-  //   height: auto;
-  // }
+  wp-block-group {
+    background-image: url("https://tarainstruments.com/wp-content/uploads/2021/06/home_background.jpg");
+  }
   .container {
     max-width: 1200px;
     width: 100%;

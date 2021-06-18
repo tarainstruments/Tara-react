@@ -315,6 +315,11 @@ const Content = styled.div`
           height: 62px;
           margin: 0 auto;
         }
+
+        .social-media-icon {
+          width: 80px !important;
+          height: 80px;
+        }
         .wp-block-column {
           padding-top: 15px;
           padding-bottom: 15px;

@@ -65,7 +65,7 @@ const NavContainer = styled.nav`
 
 const NavItem = styled.div`
   padding: 0;
-  margin: 0 16px;
+  margin: auto 16px;
   color: var(--brand);
   font-size: 0.9em;
   box-sizing: border-box;

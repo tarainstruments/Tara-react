@@ -49,6 +49,11 @@ const Content = styled.div`
     .wp-block-columns {
       .wp-block-column {
         margin-bottom: 2rem;
+
+        .wp-block-image {
+          margin: auto auto;
+          max-width: 465px;
+        }
       }
       align-items: center;
       .wp-block-button {
