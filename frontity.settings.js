@@ -33,6 +33,10 @@ const settings = {
               "YouTube",
               "https://www.youtube.com/channel/UCqTtnisCnTNwVOO_NfFxDqQ",
             ],
+            [
+              "Instagram",
+              "https://instagram.com/tara.international?utm_medium=copy_link",
+            ],
           ],
           featured: {
             showOnList: true,
