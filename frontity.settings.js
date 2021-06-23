@@ -18,9 +18,8 @@ const settings = {
             ["About", "/about/"],
             ["Principals", "/principals/"],
             ["Products", "/products/"],
-            // ["Solutions", "/solutions/"],
             ["News", "/news/"],
-            ["Jobs", "/jobs/"],
+            ["Careers", "/careers/"],
             ["Contact", "/contact/"],
           ],
           socialLinks: [

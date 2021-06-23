@@ -475,4 +475,47 @@ const Content = styled.div`
   .home-services-img-left {
     background: #f8f8fa;
   }
+
+  /* Added by me for use in the jobs page. */
+  .hero-homepage {
+    padding-bottom: 34px;
+    @media (min-width: 992px) {
+      padding-bottom: 50px;
+    }
+    .wp-block-columns {
+      .wp-block-column {
+        margin-bottom: 2rem;
+
+        .wp-block-image {
+          margin: auto auto;
+          max-width: 465px;
+        }
+      }
+      align-items: center;
+      .wp-block-button {
+        .wp-block-button__link {
+          background: var(--brand);
+          border: 1px solid transparent;
+          border-color: var(--brand);
+          box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 0.4);
+          transition: all 0.3s ease;
+          margin-right: 0.5rem;
+          &:hover {
+            color: var(--black);
+            background: transparent;
+          }
+        }
+      }
+      .wp-block-button.is-style-outline {
+        .wp-block-button__link {
+          background: transparent;
+          border-color: var(--brand);
+          color: var(--brand);
+          &:hover {
+            color: var(--black);
+          }
+        }
+      }
+    }
+  }
 `;
