@@ -395,8 +395,7 @@ const Content = styled.div`
     .wp-block-group__inner-container {
       .wp-block-columns {
         .wp-block-column {
-          ol {
-            counter-reset: myOrderedCounter;
+          ul {
             padding-left: 0;
             margin-top: 2rem;
             li {
@@ -405,8 +404,7 @@ const Content = styled.div`
               padding-left: 3rem;
               margin-bottom: 1rem;
               &:before {
-                counter-increment: myOrderedCounter;
-                content: counter(myOrderedCounter);
+                content: "➤";
                 position: absolute;
                 background-color: var(--brand);
                 border-radius: 50%;

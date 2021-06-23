@@ -33,7 +33,6 @@ const settings = {
               "YouTube",
               "https://www.youtube.com/channel/UCqTtnisCnTNwVOO_NfFxDqQ",
             ],
-            ["Twitter", "https://twitter.com/tarainstruments"],
           ],
           featured: {
             showOnList: true,
