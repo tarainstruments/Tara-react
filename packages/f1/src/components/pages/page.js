@@ -55,6 +55,15 @@ const ArticleContainer = styled.div`
   .post-title {
     text-align: center;
   }
+
+  #particles-js {
+    position: absolute;
+    display: block;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 `;
 
 const Title = styled.h1`
