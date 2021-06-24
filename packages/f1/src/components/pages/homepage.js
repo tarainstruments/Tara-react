@@ -32,6 +32,15 @@ export default connect(HomePage);
 const Container = styled.div``;
 
 const Content = styled.div`
+  #particles-js {
+    position: fixed;
+    display: block;
+    background-size: cover;
+    top: 10rem;
+    left: 10rem;
+    z-index: -1;
+  }
+
   width: 100%;
   position: relative;
   .wp-block-group__inner-container {

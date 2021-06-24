@@ -57,11 +57,11 @@ const ArticleContainer = styled.div`
   }
 
   #particles-js {
-    position: absolute;
+    position: fixed;
     display: block;
     background-size: cover;
-    top: 0;
-    left: 0;
+    top: 10rem;
+    left: 10rem;
     z-index: -1;
   }
 `;
