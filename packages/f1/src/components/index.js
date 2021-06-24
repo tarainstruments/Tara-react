@@ -77,7 +77,7 @@ const Theme = ({ state }) => {
           <Loading when={data.isFetching} />
           <List when={data.isArchive} />
           <HomePage when={data.isHome} />
-          <Jobs when={data.isAwsmJobOpenings} />
+          {/* <Jobs when={data.link === "/careers/"} /> */}
           <Page when={data.isPage} />
           <Post when={data.isPostType} />
           <PageError when={data.isError} />

@@ -30,20 +30,6 @@ const Nav = ({ state }) => (
         </NavItem>
       );
     })}
-    {/* <FacebookIcon />
-    <LinkedinIcon />
-    <YoutubeIcon /> */}
-    {/* {state.theme.socialLinks.map(([name, link]) => {
-      return (
-        <NavItem key={name}>
-          <Link link={link}>
-            {name.toLowerCase() === "facebook" && <FacebookIcon />}
-            {name.toLowerCase() === "linkedin" && <LinkedinIcon />}
-            {name.toLowerCase() === "youtube" && <YoutubeIcon />}
-          </Link>
-        </NavItem>
-      );
-    })} */}
   </NavContainer>
 );
 
