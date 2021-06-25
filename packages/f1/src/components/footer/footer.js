@@ -7,63 +7,61 @@ import Link from "../link";
 const Footer = ({ state }) => {
   // const options = state.source.get("acf-options-page");
   return (
-    <>
-      <Container>
-        <div className="row">
-          <div className="col-12 col-lg-6 footer-widget widget-one">
-            <h4 className="widget-title">Office Address</h4>
-            <p>
-              No. 312, Notus IT Park, Bhailal Amin Marg.
-              <br />
-              Near Genda Circle,
-              <br />
-              Vadodara – 390007,
-              <br />
-              Gujarat, India.
-              <br />
-              <br />
-              <b>Contact:</b> ‎+91 74860 47646
-              <br />
-              <br />
-              <b>Email:</b> info@tarainstruments.com
-            </p>
-          </div>
-          <div className="col-12 col-md-4 col-lg-2 footer-widget widget-two">
-            <h4 className="widget-title">Quick Links</h4>
-            <ul className="widget-list">
-              {state.theme.menu.map(([name, link]) => {
-                return (
-                  <li key={link}>
-                    <Link className="widget-list-link" link={link}>
-                      {name}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div className="col-12 col-md-4 col-lg-2 footer-widget widget-four">
-            <h4 className="widget-title">Connect</h4>
-            <ul className="widget-list">
-              {state.theme.socialLinks.map(([name, link]) => {
-                return (
-                  <li key={link}>
-                    <Link
-                      className="widget-list-link"
-                      target="_blank"
-                      rel="nofollow noopener"
-                      link={link}
-                    >
-                      {name}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+    <Container>
+      <div className="row">
+        <div className="col-12 col-lg-6 footer-widget widget-one">
+          <h4 className="widget-title">Office Address</h4>
+          <p>
+            No. 312, Notus IT Park, Bhailal Amin Marg.
+            <br />
+            Near Genda Circle,
+            <br />
+            Vadodara – 390007,
+            <br />
+            Gujarat, India.
+            <br />
+            <br />
+            <b>Contact:</b> ‎+91 74860 47646
+            <br />
+            <br />
+            <b>Email:</b> info@tarainstruments.com
+          </p>
         </div>
-      </Container>
-    </>
+        <div className="col-12 col-md-4 col-lg-2 footer-widget widget-two">
+          <h4 className="widget-title">Quick Links</h4>
+          <ul className="widget-list">
+            {state.theme.menu.map(([name, link]) => {
+              return (
+                <li key={link}>
+                  <Link className="widget-list-link" link={link}>
+                    {name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="col-12 col-md-4 col-lg-2 footer-widget widget-four">
+          <h4 className="widget-title">Connect</h4>
+          <ul className="widget-list">
+            {state.theme.socialLinks.map(([name, link]) => {
+              return (
+                <li key={link}>
+                  <Link
+                    className="widget-list-link"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    link={link}
+                  >
+                    {name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    </Container>
   );
 };
 

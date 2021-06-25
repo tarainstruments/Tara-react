@@ -3,6 +3,7 @@ import { connect, styled } from "frontity";
 import Link from "../link";
 import List from "../list";
 //import Image from "@frontity/components/image";
+import particlesBackground from "../hooks/particlesBackground";
 
 const HomePage = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -13,6 +14,8 @@ const HomePage = ({ state, actions, libraries }) => {
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
   //const BannerSlider = homepage.acf.banner_slider;
+
+  particlesBackground();
 
   useEffect(() => {
     actions.source.fetch("/");
@@ -32,15 +35,6 @@ export default connect(HomePage);
 const Container = styled.div``;
 
 const Content = styled.div`
-  #particles-js {
-    position: fixed;
-    display: block;
-    background-size: cover;
-    top: 10rem;
-    left: 10rem;
-    z-index: -1;
-  }
-
   width: 100%;
   position: relative;
   .wp-block-group__inner-container {

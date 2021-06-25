@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
 import List from "../list";
+import particlesBackground from "../hooks/particlesBackground";
 
 const Page = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -12,14 +13,7 @@ const Page = ({ state, actions, libraries }) => {
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
 
-  //   const response = await libraries.source.api.get({
-  //     endpoint: "tags",
-  //     params: {
-  //       per_page: 100,
-  //     },
-  //   });
-  //   console.log("RESPONSE: ");
-  //   console.log(JSON.stringify(response));
+  particlesBackground();
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits
@@ -62,7 +56,7 @@ const ArticleContainer = styled.div`
     background-size: cover;
     top: 10rem;
     left: 10rem;
-    z-index: -1;
+    z-index: 0;
   }
 `;
 
