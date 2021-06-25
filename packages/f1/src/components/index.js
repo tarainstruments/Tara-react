@@ -14,7 +14,7 @@ import PageError from "./page-error";
 import BootstrapCss from "./styles/bootstrap.css";
 import gutenbergStyle from "./styles/gutenberg/style.css";
 import gutenbergTheme from "./styles/gutenberg/theme.css";
-import particlesBackground from "./hooks/particlesBackground";
+// import particlesBackground from "./hooks/particlesBackground";
 /**
  * Theme is the root React component of our theme. The one we will export
  * in roots.
@@ -22,7 +22,7 @@ import particlesBackground from "./hooks/particlesBackground";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-  particlesBackground();
+  //   particlesBackground();
   return (
     <>
       {/* Add some metatags to the <head> of the HTML. */}
@@ -115,12 +115,6 @@ const globalStyles = css`
   }
   html {
     height: -webkit-fill-available;
-    .background_image {
-      //   background-image: url("https://tarainstruments.com/wp-content/uploads/2021/06/home_background.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: top;
-    }
   }
   ,
   a,
@@ -142,9 +136,6 @@ const globalStyles = css`
     line-height: 24px;
     font-size: 18px;
   }
-  wp-block-group {
-    background-image: url("https://tarainstruments.com/wp-content/uploads/2021/06/home_background.jpg");
-  }
   .container {
     max-width: 1200px;
     width: 100%;
@@ -160,7 +151,9 @@ const globalStyles = css`
     }
   }
 
-  // make sure all these classes are on top of the particle background
+  // make sure all these classes/elements are on top of the particle background
+  input,
+  textarea,
   .wp-block-image,
   .wp-block-button,
   .about-services,

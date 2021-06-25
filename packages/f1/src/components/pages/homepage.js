@@ -24,15 +24,27 @@ const HomePage = ({ state, actions, libraries }) => {
 
   // Load the post, but only if the data is ready.
   return data.isReady ? (
-    <Content>
-      <Html2React html={homepage.content.rendered} />
-    </Content>
+    <HomeContainer>
+      <Content>
+        <Html2React html={homepage.content.rendered} />
+      </Content>
+    </HomeContainer>
   ) : null;
 };
 
 export default connect(HomePage);
 
-const Container = styled.div``;
+const HomeContainer = styled.div`
+  width: 100%;
+  .post-title {
+    text-align: center;
+  }
+
+  #particles-js {
+    max-width: 1035px;
+    width: 100%;
+  }
+`;
 
 const Content = styled.div`
   width: 100%;
