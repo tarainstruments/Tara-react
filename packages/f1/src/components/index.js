@@ -14,7 +14,6 @@ import PageError from "./page-error";
 import BootstrapCss from "./styles/bootstrap.css";
 import gutenbergStyle from "./styles/gutenberg/style.css";
 import gutenbergTheme from "./styles/gutenberg/theme.css";
-// import particlesBackground from "./hooks/particlesBackground";
 /**
  * Theme is the root React component of our theme. The one we will export
  * in roots.
@@ -22,17 +21,11 @@ import gutenbergTheme from "./styles/gutenberg/theme.css";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-  //   particlesBackground();
   return (
     <>
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
       <Head>
-        <script
-          type="text/javascript"
-          async
-          src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
-        ></script>
         <meta
           name="google-site-verification"
           content="JkFoA-xTcJUpFArkVm3wVUdb0yV1pMJW87xO3t4jCps"
@@ -154,6 +147,7 @@ const globalStyles = css`
   // make sure all these classes/elements are on top of the particle background
   input,
   textarea,
+  iframe,
   .wp-block-image,
   .wp-block-button,
   .about-services,
@@ -188,6 +182,8 @@ const Main = styled.div`
   justify-content: center;
 
   #particles-js {
+    max-width: 1035px;
+    width: 100%;
     position: fixed;
     display: block;
     background-size: cover;

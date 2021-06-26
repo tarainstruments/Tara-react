@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
 import List from "../list";
-import particlesBackground from "../hooks/particlesBackground";
+import Particles from "react-tsparticles";
 
 const Page = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -13,7 +13,6 @@ const Page = ({ state, actions, libraries }) => {
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
 
-  particlesBackground();
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits
@@ -27,6 +26,12 @@ const Page = ({ state, actions, libraries }) => {
   // Load the post, but only if the data is ready.
   return data.isReady ? (
     <ArticleContainer>
+      <Particles
+        id="particles-js"
+        url="https://cdn.statically.io/gh/rishi255/cdn/main/particles_ts.json"
+        init={console.log("Initialising particles in page.")}
+        loaded={console.log("Particles loaded in page.")}
+      />
       <div className="post-title">
         <Title dangerouslySetInnerHTML={{ __html: page.title.rendered }} />
       </div>
@@ -48,15 +53,6 @@ const ArticleContainer = styled.div`
   width: 100%;
   .post-title {
     text-align: center;
-  }
-
-  #particles-js {
-    position: fixed;
-    display: block;
-    background-size: cover;
-    top: 10rem;
-    left: 10rem;
-    z-index: 0;
   }
 `;
 

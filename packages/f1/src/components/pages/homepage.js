@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
 import List from "../list";
-//import Image from "@frontity/components/image";
-import particlesBackground from "../hooks/particlesBackground";
+import Particles from "react-tsparticles";
 
 const HomePage = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -15,8 +14,6 @@ const HomePage = ({ state, actions, libraries }) => {
   const Html2React = libraries.html2react.Component;
   //const BannerSlider = homepage.acf.banner_slider;
 
-  particlesBackground();
-
   useEffect(() => {
     actions.source.fetch("/");
     List.preload();
@@ -25,6 +22,12 @@ const HomePage = ({ state, actions, libraries }) => {
   // Load the post, but only if the data is ready.
   return data.isReady ? (
     <HomeContainer>
+      <Particles
+        id="particles-js"
+        url="https://cdn.statically.io/gh/rishi255/cdn/main/particles_ts.json"
+        init={console.log("Initialising particles in Home.")}
+        loaded={console.log("Particles loaded in Home.")}
+      />
       <Content>
         <Html2React html={homepage.content.rendered} />
       </Content>
@@ -38,11 +41,6 @@ const HomeContainer = styled.div`
   width: 100%;
   .post-title {
     text-align: center;
-  }
-
-  #particles-js {
-    max-width: 1035px;
-    width: 100%;
   }
 `;
 
