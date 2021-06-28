@@ -9,7 +9,10 @@ const Header = ({ state }) => {
     <>
       <BrandContainer>
         <StyledLink link="/">
-          <HeaderLogo src="https://tarainstruments.com/wp-content/uploads/2021/06/tara_logo-1.png"></HeaderLogo>
+          <HeaderLogo
+            src="https://tarainstruments.com/wp-content/uploads/2021/06/tara_logo-1.png"
+            className="header-logo"
+          ></HeaderLogo>
           {/* <Title>
             <span>Tara</span> Instruments
           </Title> */}
