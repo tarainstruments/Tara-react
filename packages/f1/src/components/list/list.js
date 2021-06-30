@@ -10,9 +10,6 @@ const List = ({ state }) => {
   const isPrincipal = data.type === "principals";
   const isNews = data.type === "news";
   let title = "Products";
-  if (data.isAwsmJobOpeningsArchive) {
-    title = "Jobs";
-  }
   if (isPrincipal) {
     title = "Principals";
   }
@@ -39,63 +36,23 @@ const List = ({ state }) => {
         </Header>
       )}
 
-      {/* If the list is a AWSM Job career page, we render the introductory job posting text. */}
-      {data.isAwsmJobOpeningsArchive && (
-        <section className="section">
-          <h3>We are always interested in hearing from talented people.</h3>
-          <br />
-          <p>
-            {" "}
-            You can send your application to us, with a suitable covering
-            letter/email and a detailed CV by email to{" "}
-            <a href="mailto:info@tarainstruments.com">
-              info@tarainstruments.com
-            </a>
-            .{" "}
-          </p>
-          <p>
-            Please make it clear in your application the type of role which
-            interests you.{" "}
-          </p>
-          <p>
-            We aim to contact individuals who have applied speculatively when a
-            suitable role arises, but please don’t hesitate to apply again at a
-            later date if you see a role you think is right for you.
-          </p>
-        </section>
-      )}
-      {/* Iterate over the items of the list. */}
-      {data.isAwsmJobOpeningsArchive && (
-        <section className="section job-listing">
-          <div className="container">
-            <div className="row">
-              {/* Iterate over the items of the list. */}
-              {data.items.map(({ type, id }) => {
-                const item = state.source[type][id];
-                // Render one Item component for each one.
-                return <Item key={item.id} item={item} />;
-              })}
-            </div>
-          </div>
-        </section>
-      )}
-      {!data.isAwsmJobOpeningsArchive && (
-        <CardGrid>
-          {data.items.map(({ type, id }) => {
-            const item = state.source[type][id];
-            // if (typeof item !== "undefined") {
-            //   console.log("Item WHICH IS undefined: ");
-            //   console.log(item);
-            // }
-            // Render one Item component for each one.
-            // if (item.categories.include(typeToShow))
-            return (
-              <Item key={item.id} item={item} isPrincipals={isPrincipal} />
-            );
-            // else return null;
-          })}
-        </CardGrid>
-      )}
+      {/* Removed the full AwsmJobs thing as we're not using it anymore */}
+      {/* Is either Principals or Products page (NOT news)*/}
+      {/* {!isNews && ( */}
+      <CardGrid>
+        {data.items.map(({ type, id }) => {
+          const item = state.source[type][id];
+          // if (typeof item !== "undefined") {
+          //   console.log("Item WHICH IS undefined: ");
+          //   console.log(item);
+          // }
+          // Render one Item component for each one.
+          // if (item.categories.include(typeToShow))
+          return <Item key={item.id} item={item} isPrincipals={isPrincipal} />;
+          // else return null;
+        })}
+      </CardGrid>
+      {/* )} */}
 
       <Pagination />
     </Container>
