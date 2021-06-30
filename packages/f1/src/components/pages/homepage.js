@@ -42,6 +42,10 @@ const HomeContainer = styled.div`
   .post-title {
     text-align: center;
   }
+  /* z-index of particles is 1 only for homepage */
+  #particles-js {
+    z-index: 1;
+  }
 `;
 
 const Content = styled.div`
