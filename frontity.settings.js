@@ -5,6 +5,7 @@ const settings = {
       url: "https://tarainstruments.com",
       title: "Tara Instruments",
       description:
+        // this description isn't seen anywhere anymore. (removed the description meta tag from index.js, as it is now directly handled by AIOSEO on WordPress.)
         "Tara Instruments is an Instruments Provider for industry-standard scientific apparatus, for numerous applications.",
     },
   },
