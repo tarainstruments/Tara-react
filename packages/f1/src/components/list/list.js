@@ -1,8 +1,10 @@
 import React from "react";
-import { connect, styled, decode } from "frontity";
+import { Global, css, connect, styled, decode } from "frontity";
 import Item from "./list-item";
 import Pagination from "./pagination";
 import capitalise from "../helpers";
+import { Carousel } from "react-responsive-carousel";
+import carouselCss from "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const List = ({ state }) => {
   // Get the data of the current list.
@@ -38,21 +40,40 @@ const List = ({ state }) => {
 
       {/* Removed the full AwsmJobs thing as we're not using it anymore */}
       {/* Is either Principals or Products page (NOT news)*/}
-      {/* {!isNews && ( */}
-      <CardGrid>
-        {data.items.map(({ type, id }) => {
-          const item = state.source[type][id];
-          // if (typeof item !== "undefined") {
-          //   console.log("Item WHICH IS undefined: ");
-          //   console.log(item);
-          // }
-          // Render one Item component for each one.
-          // if (item.categories.include(typeToShow))
-          return <Item key={item.id} item={item} isPrincipals={isPrincipal} />;
-          // else return null;
-        })}
-      </CardGrid>
-      {/* )} */}
+      {!isNews && (
+        <CardGrid>
+          {data.items.map(({ type, id }) => {
+            const item = state.source[type][id];
+            return (
+              <Item key={item.id} item={item} isPrincipals={isPrincipal} />
+            );
+          })}
+        </CardGrid>
+      )}
+
+      {isNews && (
+        <NewsCarousel>
+          <Global styles={css(carouselCss)} />
+          <Carousel
+            autoFocus
+            emulateTouch
+            infiniteLoop
+            useKeyboardArrows
+            // renderIndicator={(
+            //   index: 5
+            // ) => React.ReactNode}
+          >
+            {data.items.map(({ type, id }) => {
+              const item = state.source[type][id];
+              return (
+                // <a href={item.link} style={{ color: "unset" }}>
+                <Item key={item.id} item={item} isNews />
+                // </a>
+              );
+            })}
+          </Carousel>
+        </NewsCarousel>
+      )}
 
       <Pagination />
     </Container>
@@ -60,6 +81,15 @@ const List = ({ state }) => {
 };
 
 export default connect(List);
+
+const NewsCarousel = styled.div`
+  .carousel .control-dots .dot {
+    background: var(--brand);
+  }
+  img {
+    max-height: 300px;
+  }
+`;
 
 const Container = styled.section`
   width: 1200px;

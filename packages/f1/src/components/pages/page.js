@@ -28,7 +28,7 @@ const Page = ({ state, actions, libraries }) => {
     <ArticleContainer>
       <Particles
         id="particles-js"
-        url="https://cdn.statically.io/gh/rishi255/cdn/1.3/particles_ts.json"
+        url="https://cdn.statically.io/gh/rishi255/cdn/1.4/particles_ts.json"
         init={console.log("Initialising particles in page.")}
         loaded={console.log("Particles loaded in page.")}
       />
