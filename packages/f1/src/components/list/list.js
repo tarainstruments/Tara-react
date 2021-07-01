@@ -59,9 +59,7 @@ const List = ({ state }) => {
             emulateTouch
             infiniteLoop
             useKeyboardArrows
-            // renderIndicator={(
-            //   index: 5
-            // ) => React.ReactNode}
+            showThumbs={false}
           >
             {data.items.map(({ type, id }) => {
               const item = state.source[type][id];

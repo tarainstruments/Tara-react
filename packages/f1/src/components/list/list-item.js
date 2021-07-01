@@ -40,6 +40,14 @@ const Item = ({ state, item, isPrincipals = false, isNews = false }) => {
     newLink = "/" + newLink;
   }
 
+  let fullPost = null;
+  let postText = null;
+  if (isNews) {
+    // These lines only matter if it's news. Otherwise they are NOT used.
+    fullPost = state.source.news[item.id];
+    postText = fullPost.content.rendered;
+  }
+
   return (
     <Switch>
       {/* For principals */}
@@ -122,48 +130,13 @@ const Item = ({ state, item, isPrincipals = false, isNews = false }) => {
               <NewsFeaturedMedia id={item.featured_media} inList={true} />
             )) || <Image id={item.featured_media} />}
 
-            {/* If the post has an excerpt (short summary text), we render it */}
-            {item.excerpt && (
-              <Excerpt
-                dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
-              />
-            )}
-
-            <Link className="brand-btnhollow" link={item.link}>
-              {readMoreLabel}{" "}
-              <svg
-                width="14px"
-                height="9px"
-                viewBox="0 0 14 9"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  id="Symbols"
-                  stroke="none"
-                  strokeWidth="1"
-                  fillRule="evenodd"
-                >
-                  <g
-                    id="Icons/Right-arrow"
-                    transform="translate(0.000000, -2.000000)"
-                    fillRule="nonzero"
-                  >
-                    <g id="interface" transform="translate(0.000000, 2.000000)">
-                      <path
-                        d="M13.7823071,3.98623766 L9.90356292,0.21135247 C9.61303376,-0.0713855917 9.14311798,-0.0703331717 8.85392477,0.213820214 C8.56476866,0.497937309 8.56588194,0.957481922 8.85641109,1.24025627 L11.460152,3.77419318 L0.742187132,3.77419318 C0.332277179,3.77419318 -3.09974268e-13,4.09913691 -3.09974268e-13,4.5 C-3.09974268e-13,4.90086317 0.332277179,5.2258069 0.742187132,5.2258069 L11.4601149,5.2258069 L8.8564482,7.75974381 C8.56591905,8.04251816 8.56480577,8.50206277 8.85396188,8.78617987 C9.14315509,9.07036955 9.61310798,9.07134938 9.90360003,8.78864761 L13.7816762,5.01445194 C14.0730218,4.73004453 14.0720941,4.26901201 13.7823071,3.98623766 Z"
-                        id="Path"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </Link>
+            {/* Render the full post content if it's news. */}
+            {<Excerpt dangerouslySetInnerHTML={{ __html: postText }} />}
           </div>
         </Article>
       )}
       {/* for products */}
-      {!isPrincipals && (
+      {!isPrincipals && !isNews && (
         <Article className="card job-article align-items-center">
           <div className="job-box">
             <Link className="job-title" link={item.link}>
