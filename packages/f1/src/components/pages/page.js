@@ -4,12 +4,16 @@ import Link from "../link";
 import List from "../list";
 import Particles from "react-tsparticles";
 
+const ConditionalWrapper = ({ condition, wrapper, children }) =>
+  condition ? wrapper(children) : children;
+
 const Page = ({ state, actions, libraries }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
   // Get the data of the post.
   const page = state.source[data.type][data.id];
 
+  const isJobs = state.router.link === "/careers/";
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
 
@@ -26,28 +30,60 @@ const Page = ({ state, actions, libraries }) => {
   // Load the post, but only if the data is ready.
   return data.isReady ? (
     <ArticleContainer>
-      <Particles
-        id="particles-js"
-        url="https://cdn.statically.io/gh/rishi255/cdn/1.4/particles_ts.json"
-        init={console.log("Initialising particles in page.")}
-        loaded={console.log("Particles loaded in page.")}
-      />
-      <div className="post-title">
-        <Title dangerouslySetInnerHTML={{ __html: page.title.rendered }} />
-      </div>
+      <ConditionalWrapper
+        condition={isJobs}
+        wrapper={(children) => <JobsBackground>{children}</JobsBackground>}
+      >
+        <Particles
+          id="particles-js"
+          url="https://cdn.statically.io/gh/rishi255/cdn/1.4/particles_ts.json"
+          init={console.log("Initialising particles in page.")}
+          loaded={console.log("Particles loaded in page.")}
+        />
+        <div className="post-title">
+          <Title dangerouslySetInnerHTML={{ __html: page.title.rendered }} />
+        </div>
 
-      {/* Render the content using the Html2React component so the HTML is processed
+        {/* Render the content using the Html2React component so the HTML is processed
        by the processors we included in the libraries.html2react.processors array. */}
-      <Content>
-        {/* <JobContent> */}
-        <Html2React html={page.content.rendered} />
-        {/* </JobContent> */}
-      </Content>
+        <Content>
+          {/* <JobContent> */}
+          <Html2React html={page.content.rendered} />
+          {/* </JobContent> */}
+        </Content>
+      </ConditionalWrapper>
     </ArticleContainer>
   ) : null;
 };
 
 export default connect(Page);
+
+const JobsBackground = styled.div`
+  background-image: url("http://localhost:8000/background.jpg");
+  background: -moz-linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4990371148459384) 25%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url("http://localhost:8000/background.jpg");
+  background: -webkit-linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4990371148459384) 25%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url("http://localhost:8000/background.jpg");
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4990371148459384) 25%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url("http://localhost:8000/background.jpg");
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+  background-size: cover;
+`;
 
 const ArticleContainer = styled.div`
   width: 100%;
@@ -141,10 +177,10 @@ const Content = styled.div`
     }
   }
   @media (max-width: 992px) {
-    .wp-block-columns {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
+  }
+  .wp-block-columns {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   /* Input fields styles */
