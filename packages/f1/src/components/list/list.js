@@ -55,7 +55,6 @@ const List = ({ state }) => {
         <NewsCarousel>
           <Global styles={css(carouselCss)} />
           <Carousel
-            autoFocus
             emulateTouch
             infiniteLoop
             useKeyboardArrows
@@ -86,6 +85,17 @@ const NewsCarousel = styled.div`
   }
   .carousel .control-dots .dot {
     background: var(--brand);
+  }
+  .carousel.carousel-slider .control-arrow:hover {
+    background: transparent;
+  }
+  .carousel {
+    .control-prev.control-arrow:before {
+      border-right: 8px solid black;
+    }
+    .control-next.control-arrow:before {
+      border-left: 8px solid black;
+    }
   }
   img {
     max-height: 300px;

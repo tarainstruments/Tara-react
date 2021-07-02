@@ -319,7 +319,7 @@ const Content = styled.div`
   .about-highlight {
     padding-bottom: 2rem;
     .wp-block-group__inner-container {
-      max-width: 571px;
+      max-width: 900px;
       p {
         margin-bottom: 1.5rem;
         text-align: justify;

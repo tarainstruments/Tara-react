@@ -1,6 +1,8 @@
 # Custom
 backup_product_list_item.js
 .DS_Store
+.prettierrc
+.unibeautifyrc
 
 node_modules
 build
