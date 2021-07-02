@@ -116,7 +116,10 @@ const Item = ({ state, item, isPrincipals = false, isNews = false }) => {
       )}
       {/* for news */}
       {isNews && (
-        <Article className="card job-article align-items-center">
+        <Article
+          className="card job-article align-items-center"
+          style={{ marginBottom: "unset" }}
+        >
           <div className="job-box">
             <Link className="job-title" link={item.link}>
               <h4

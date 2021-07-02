@@ -81,6 +81,9 @@ const List = ({ state }) => {
 export default connect(List);
 
 const NewsCarousel = styled.div`
+  .carousel.carousel-slider {
+    margin-bottom: 2rem;
+  }
   .carousel .control-dots .dot {
     background: var(--brand);
   }

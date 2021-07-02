@@ -11,7 +11,7 @@ const Header = ({ state }) => {
         <StyledLink link="/">
           <HeaderLogo
             src="https://tarainstruments.com/wp-content/uploads/2021/06/tara_logo-1.png"
-            className="header-logo"
+            className="header-logo no-lazyload"
           ></HeaderLogo>
           {/* <Title>
             <span>Tara</span> Instruments
