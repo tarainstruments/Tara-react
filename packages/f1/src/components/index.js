@@ -156,7 +156,6 @@ const Main = styled.div`
   justify-content: center;
 
   #particles-js {
-    max-width: 1035px;
     width: 100%;
     position: fixed;
     display: block;
