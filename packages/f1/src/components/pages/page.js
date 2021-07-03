@@ -59,28 +59,28 @@ const Page = ({ state, actions, libraries }) => {
 export default connect(Page);
 
 const JobsBackground = styled.div`
-  background-image: url("http://localhost:8000/background.jpg");
+  background-image: url("https://tarainstruments.com/wp-content/uploads/2021/07/background-scaled.jpg");
   background: -moz-linear-gradient(
       to top,
       rgba(255, 255, 255, 0) 0%,
       rgba(255, 255, 255, 0.4990371148459384) 25%,
       rgba(255, 255, 255, 1) 100%
     ),
-    url("http://localhost:8000/background.jpg");
+    url("https://tarainstruments.com/wp-content/uploads/2021/07/background-scaled.jpg");
   background: -webkit-linear-gradient(
       to top,
       rgba(255, 255, 255, 0) 0%,
       rgba(255, 255, 255, 0.4990371148459384) 25%,
       rgba(255, 255, 255, 1) 100%
     ),
-    url("http://localhost:8000/background.jpg");
+    url("https://tarainstruments.com/wp-content/uploads/2021/07/background-scaled.jpg");
   background: linear-gradient(
       to top,
       rgba(255, 255, 255, 0) 0%,
       rgba(255, 255, 255, 0.4990371148459384) 25%,
       rgba(255, 255, 255, 1) 100%
     ),
-    url("http://localhost:8000/background.jpg");
+    url("https://tarainstruments.com/wp-content/uploads/2021/07/background-scaled.jpg");
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
   background-size: cover;
 `;
