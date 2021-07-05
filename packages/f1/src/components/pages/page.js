@@ -317,7 +317,7 @@ const Content = styled.div`
   /**Custom style for pages**/
   /**About Block**/
   .about-highlight {
-    padding-bottom: 2rem;
+    // padding-bottom: 2rem;
     .wp-block-group__inner-container {
       max-width: 900px;
       p {
@@ -330,6 +330,17 @@ const Content = styled.div`
         text-align: justify;
         margin-bottom: 1rem;
         font-size: 110%;
+      }
+
+      .wp-block-columns.our-journey {
+        img {
+          transform: scale(0.9);
+        }
+      }
+      .wp-block-columns.our-team {
+        img {
+          //   transform: scale(0.8);
+        }
       }
     }
   }
