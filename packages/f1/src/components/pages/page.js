@@ -334,12 +334,12 @@ const Content = styled.div`
 
       .wp-block-columns.our-journey {
         img {
-          transform: scale(0.9);
+          transform: scale(0.72);
         }
       }
       .wp-block-columns.our-team {
         img {
-          //   transform: scale(0.8);
+          transform: scale(0.7);
         }
       }
     }
