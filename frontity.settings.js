@@ -27,7 +27,7 @@ const settings = {
             ["Facebook", "https://www.facebook.com/TaraInternational1980/"],
             [
               "LinkedIn",
-              "https://www.linkedin.com/company/taragroupofbusiness/mycompany/",
+              "https://www.linkedin.com/company/taragroupofbusiness/",
             ],
             [
               "YouTube",
