@@ -61,7 +61,7 @@ export default connect(Page);
 const JobsBackground = styled.div`
   background: url("https://tarainstruments.com/wp-content/uploads/2021/07/careers_background.png");
   background-size: cover;
-  @media only screen and (min-width: 781px) and (max-width: 992px) {
+  @media only screen and (min-width: 781px) and (max-width: 991.98px) {
     background: none;
   }
 `;
